@@ -1,0 +1,170 @@
+[0725/170204.913:ERROR:gpu_init.cc(440)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0726/164433.267:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0726/164433.313:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0726/164433.391:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0726/231030.863:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0726/231030.905:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0727/084654.395:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0727/084654.432:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0727/084656.684:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0727/084656.685:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0727/084716.811:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0727/084716.811:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0221/134748.850:INFO:CONSOLE(9)] "X-Frame-Options may only be set via an HTTP header sent along with a document. It may not be set inside <meta>.", source: https://ilonah-lt.dm.cx/CxRestAPI/auth/#/login?ReturnUrl=%2FCxRestAPI%2Fauth%2Fidentity%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dide_client%26scope%3Doffline_access%2520openid%2520sast_api%2520sast-permissions%2520access_control_api%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Filonah-lt.dm.cx%252F (9)
+[0221/134749.415:INFO:CONSOLE(21)] "Use `shouldComponentUpdate` in an `observer` based component breaks the behavior of `observer` and might lead to unexpected results. Manually implementing `sCU` should not be needed when using mobx-react.", source: https://ilonah-lt.dm.cx/CxRestAPI/auth/bundle-8a893c200d7580fffe2d.js (21)
+[0221/134749.543:INFO:CONSOLE(21)] "Use `shouldComponentUpdate` in an `observer` based component breaks the behavior of `observer` and might lead to unexpected results. Manually implementing `sCU` should not be needed when using mobx-react.", source: https://ilonah-lt.dm.cx/CxRestAPI/auth/bundle-8a893c200d7580fffe2d.js (21)
+[0221/134927.718:ERROR:gpu_init.cc(440)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0222/084643.049:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084643.576:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084650.216:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084650.232:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084650.432:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084650.554:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084655.244:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084655.249:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084655.445:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084655.567:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084700.256:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084700.258:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084700.456:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084700.582:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084705.278:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084705.280:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084705.481:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084705.615:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084710.289:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084710.290:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084710.487:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084710.627:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084715.302:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084715.302:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084715.501:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084715.639:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084720.323:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084720.323:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084720.509:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084720.649:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084725.341:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084725.343:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084725.528:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084725.660:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084730.361:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084730.369:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084730.549:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084730.691:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084735.377:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084735.380:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084735.562:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084735.700:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084740.399:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084740.399:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084740.567:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084740.708:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084745.414:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084745.415:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084745.584:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084745.723:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084750.427:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084750.428:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084750.599:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084750.738:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084755.437:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084755.437:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084755.605:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084755.743:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084800.456:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084800.465:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084800.615:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084800.752:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084805.467:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084805.485:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084805.634:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084805.761:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084810.482:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084810.499:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084810.642:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084810.781:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084814.074:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/084814.096:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151811.008:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151811.062:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151811.367:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151812.381:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151812.438:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151812.553:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151812.557:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151812.572:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151816.136:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151816.186:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151816.383:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151817.395:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151817.479:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151817.577:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0222/151817.590:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0223/084916.295:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0223/084916.802:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0223/084917.272:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0228/142658.075:ERROR:gpu_init.cc(440)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0228/143055.664:INFO:CONSOLE(9)] "X-Frame-Options may only be set via an HTTP header sent along with a document. It may not be set inside <meta>.", source: https://ilonah-lt.dm.cx/CxRestAPI/auth/#/login?ReturnUrl=%2FCxRestAPI%2Fauth%2Fidentity%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dide_client%26scope%3Doffline_access%2520openid%2520sast_api%2520sast-permissions%2520access_control_api%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Filonah-lt.dm.cx%252F (9)
+[0228/143056.164:INFO:CONSOLE(21)] "Use `shouldComponentUpdate` in an `observer` based component breaks the behavior of `observer` and might lead to unexpected results. Manually implementing `sCU` should not be needed when using mobx-react.", source: https://ilonah-lt.dm.cx/CxRestAPI/auth/bundle-8a893c200d7580fffe2d.js (21)
+[0228/143056.293:INFO:CONSOLE(21)] "Use `shouldComponentUpdate` in an `observer` based component breaks the behavior of `observer` and might lead to unexpected results. Manually implementing `sCU` should not be needed when using mobx-react.", source: https://ilonah-lt.dm.cx/CxRestAPI/auth/bundle-8a893c200d7580fffe2d.js (21)
+[0228/143518.529:INFO:CONSOLE(9)] "X-Frame-Options may only be set via an HTTP header sent along with a document. It may not be set inside <meta>.", source: https://ilonah-lt.dm.cx/CxRestAPI/auth/#/login?ReturnUrl=%2FCxRestAPI%2Fauth%2Fidentity%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dide_client%26scope%3Doffline_access%2520openid%2520sast_api%2520sast-permissions%2520access_control_api%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Filonah-lt.dm.cx%252F (9)
+[0228/143519.231:INFO:CONSOLE(21)] "Use `shouldComponentUpdate` in an `observer` based component breaks the behavior of `observer` and might lead to unexpected results. Manually implementing `sCU` should not be needed when using mobx-react.", source: https://ilonah-lt.dm.cx/CxRestAPI/auth/bundle-8a893c200d7580fffe2d.js (21)
+[0228/143519.387:INFO:CONSOLE(21)] "Use `shouldComponentUpdate` in an `observer` based component breaks the behavior of `observer` and might lead to unexpected results. Manually implementing `sCU` should not be needed when using mobx-react.", source: https://ilonah-lt.dm.cx/CxRestAPI/auth/bundle-8a893c200d7580fffe2d.js (21)
+[0228/143657.417:ERROR:gpu_init.cc(440)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0305/091934.123:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/091934.154:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/092100.881:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/092100.988:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/092101.439:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102711.599:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102711.615:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102714.483:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102714.483:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102716.610:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102716.626:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102719.500:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102719.501:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102721.631:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102721.650:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102721.957:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102722.310:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102722.320:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102722.321:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102722.476:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102722.489:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102724.514:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102724.514:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102743.705:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102743.711:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102746.263:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102746.264:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102748.726:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102748.726:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102751.186:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102751.194:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102751.273:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102751.274:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102751.726:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102751.727:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102756.743:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102756.751:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102757.225:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/102757.229:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/141502.899:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/141502.902:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/141507.922:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/141507.934:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/144540.690:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0305/144540.743:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0309/191320.012:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0309/191321.705:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[0330/080616.479:INFO:CONSOLE(9)] "X-Frame-Options may only be set via an HTTP header sent along with a document. It may not be set inside <meta>.", source: https://ilonah-lt.dm.cx/CxRestAPI/auth/#/login?ReturnUrl=%2FCxRestAPI%2Fauth%2Fidentity%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dide_client%26scope%3Doffline_access%2520openid%2520sast_api%2520sast-permissions%2520access_control_api%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Filonah-lt.dm.cx%252F (9)
+[0330/080616.856:INFO:CONSOLE(21)] "Use `shouldComponentUpdate` in an `observer` based component breaks the behavior of `observer` and might lead to unexpected results. Manually implementing `sCU` should not be needed when using mobx-react.", source: https://ilonah-lt.dm.cx/CxRestAPI/auth/bundle-8a893c200d7580fffe2d.js (21)
+[0330/080616.962:INFO:CONSOLE(21)] "Use `shouldComponentUpdate` in an `observer` based component breaks the behavior of `observer` and might lead to unexpected results. Manually implementing `sCU` should not be needed when using mobx-react.", source: https://ilonah-lt.dm.cx/CxRestAPI/auth/bundle-8a893c200d7580fffe2d.js (21)
+[0330/080817.372:ERROR:gpu_init.cc(440)] Passthrough is not supported, GL is disabled, ANGLE is 
+[1116/094142.580:INFO:CONSOLE(10)] "Use `shouldComponentUpdate` in an `observer` based component breaks the behavior of `observer` and might lead to unexpected results. Manually implementing `sCU` should not be needed when using mobx-react.", source: http://ilonah-lt.dm.cx/CxRestAPI/auth/bundle-933d8297bc3d076037fa.js (10)
+[1116/094142.701:INFO:CONSOLE(10)] "Use `shouldComponentUpdate` in an `observer` based component breaks the behavior of `observer` and might lead to unexpected results. Manually implementing `sCU` should not be needed when using mobx-react.", source: http://ilonah-lt.dm.cx/CxRestAPI/auth/bundle-933d8297bc3d076037fa.js (10)
+[1116/094342.128:ERROR:gpu_init.cc(440)] Passthrough is not supported, GL is disabled, ANGLE is 
+[1116/195816.642:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.
+[1116/195816.698:WARNING:dns_config_service_win.cc(512)] Failed to read DnsConfig.

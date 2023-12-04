@@ -1,0 +1,245 @@
+﻿
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Annotations.Storage;
+using System.IO;
+using System.Windows.Annotations;
+using System.IO.Packaging;
+using System.Windows.Controls;
+using System.Windows.Documents;
+
+namespace SDKSample
+{
+
+
+
+
+    public class AnnotationsHelperXps
+    {
+
+
+
+
+        public AnnotationsHelperXps()
+        {
+        }
+
+
+
+
+
+
+        public AnnotationsHelperXps(DocumentViewer dv)
+        {
+            _docViewer = dv;
+        }
+
+
+
+
+
+
+        public DocumentViewer DocViewer
+        {
+            set
+                { _docViewer = value; }
+            get
+                { return _docViewer; }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public void SetSource(Uri packageUri, Uri rootUri)
+        {
+            _packageUri = packageUri;
+            _rootUri = rootUri;
+        }
+
+
+
+
+
+
+
+
+
+        public void StartAnnotations()
+        {
+            if (_docViewer==null)
+                throw new InvalidOperationException(
+                    "Required DocumentViewer control has not been specified.");
+
+            if ((_packageUri==null) || (_rootUri==null))
+                throw new InvalidOperationException(
+                    "Required SetSource() has not been called.");
+
+
+            if (_annotService == null)
+            {
+
+                _annotStream  = GetAnnotationPart(_rootUri).GetStream();
+
+
+                _annotService = new AnnotationService(_docViewer);
+
+
+                _annotService.Enable(new XmlStreamStore(_annotStream));
+            }
+
+
+            else if (!_annotService.IsEnabled)
+                _annotService.Enable(_annotService.Store);
+
+        }
+
+
+
+
+
+        public void StopAnnotations()
+        {
+
+            if ( (_annotService != null) && _annotService.IsEnabled )
+            {
+                _annotService.Store.Flush();
+                _annotStream.Flush();
+                _annotStream.Close();
+            }
+
+
+            if (_annotService != null)
+            {
+                if (_annotService.IsEnabled)
+                    _annotService.Disable();
+                _annotService = null;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        public AnnotationDocumentPaginator GetAnnotationDocumentPaginator(
+                                                    FixedDocumentSequence fds)
+        {
+            return new AnnotationDocumentPaginator(
+                           fds.DocumentPaginator, _annotService.Store);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private PackagePart GetAnnotationPart(Uri documentUri)
+        {
+
+            Package package = PackageStore.GetPackage(_packageUri);
+            if (package == null)
+            {
+                throw new InvalidOperationException(
+                    "The document package '" + _packageUri + "' does not exist.");
+            }
+
+
+            PackagePart docPart = package.GetPart(documentUri);
+
+
+
+            PackageRelationship annotRel = null;
+            foreach ( PackageRelationship rel in
+                docPart.GetRelationshipsByType(_annotRelsType) )
+            {
+                annotRel = rel;
+            }
+
+
+
+            PackagePart annotPart = null;
+            if (annotRel == null)
+            {
+
+                annotPart = package.CreatePart(PackUriHelper.CreatePartUri(
+                    new Uri(_annotFile, UriKind.Relative)), _annotContentType);
+
+                docPart.CreateRelationship(
+                    annotPart.Uri, TargetMode.Internal, _annotRelsType);
+            }
+
+
+
+            else 
+            {   
+                annotPart = package.GetPart(annotRel.TargetUri);
+                if (annotPart == null)
+                {
+                    throw new InvalidOperationException(
+                        "The Annotations part referenced by the Annotations " +
+                        "Relationship TargetURI '" + annotRel.TargetUri +
+                        "' could not be found.");
+                }
+            }
+
+            return annotPart;
+        }
+
+
+        //private variables
+
+
+        private DocumentViewer _docViewer = null;
+
+
+        private Uri _packageUri = null;
+
+
+        private Uri _rootUri = null;
+
+
+        private string _annotFile = "/Annotations.xml";
+
+        private AnnotationService _annotService = null; 
+        private Stream _annotStream = null;             
+
+
+        private readonly string _annotRelsType =
+            "http://schemas.microsoft.com/xps/2005/06/annotations";
+
+
+        private readonly string _annotContentType =
+            "application/vnd.ms-package.annotations+xml";
+
+        //
+
+    }
+
+}
+
+ 

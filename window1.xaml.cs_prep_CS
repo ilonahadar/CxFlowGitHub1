@@ -1,0 +1,433 @@
+﻿
+
+
+using System;
+using System.Net;
+using System.IO;
+using System.IO.Packaging;
+using System.Printing;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Markup;
+using System.Windows.Xps;
+using System.Windows.Xps.Packaging;
+using WinForms = System.Windows.Forms;
+
+
+namespace SDKSample
+{
+
+
+
+    public         class Window1 : Window
+    {
+
+        public Window1()
+        {
+            InitializeComponent();
+
+
+            _annotHelper = new AnnotationsHelperXps(DocViewer);
+        }
+
+
+
+
+
+        private void OnOpen(object target, ExecutedRoutedEventArgs args)
+        {
+
+
+            if (_xpsPackage != null)
+            {
+                string msg =
+                    "The currently open document needs to be closed before\n" +
+                    "opening a new document.  Ok to close the current document?";
+                MessageBoxResult result =
+                    MessageBox.Show(msg, "Close Current Document?",
+                        MessageBoxButton.OKCancel, MessageBoxImage.Question);
+
+
+
+                if ((result != MessageBoxResult.OK))
+                    return;
+
+
+                CloseDocument();
+            }
+
+
+
+            WinForms.OpenFileDialog dialog = new WinForms.OpenFileDialog();
+            dialog.InitialDirectory = GetContentFolder();
+            dialog.CheckFileExists = true;
+            dialog.Filter = "XPS Document files (*.xps)|*.xps";
+
+
+
+            if (dialog.ShowDialog() == WinForms.DialogResult.OK)
+                OpenDocument(dialog.FileName);
+
+        }
+
+
+
+
+
+
+
+
+        private string GetContentFolder()
+        {
+
+            string contentDir = Directory.GetCurrentDirectory();
+            int dirLength = contentDir.Length;
+
+
+            if (contentDir.ToLower().EndsWith(@"\bin\debug"))
+                contentDir = contentDir.Remove(dirLength - 10, 10);
+
+
+            else if (contentDir.ToLower().EndsWith(@"\bin\release"))
+                contentDir = contentDir.Remove(dirLength - 12, 12);
+
+
+            if (Directory.Exists(contentDir + @"\Content"))
+                contentDir = contentDir + @"\Content";
+
+
+
+            return contentDir;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        public bool OpenDocument(string filename)
+        {
+
+
+            _xpsDocumentPath = filename;
+
+            _packageUri = new Uri(filename, UriKind.Absolute);
+            try
+            {
+                _xpsDocument = new XpsDocument(filename, FileAccess.ReadWrite);
+            }
+            catch (System.UnauthorizedAccessException)
+            {
+                string msg = filename +
+                    "\n\nThe specified file is Read-Only which " +
+                    "prevents storing user annotations.";
+                MessageBox.Show(msg, "Read-Only file",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+
+
+            _xpsPackage = PackageStore.GetPackage(_packageUri);
+            if ((_xpsPackage == null) || (_xpsDocument == null))
+            {
+                MessageBox.Show("Unable to get Package from file.");
+                return false;
+            }
+
+
+            FixedDocumentSequence fds = _xpsDocument.GetFixedDocumentSequence();
+            if (fds == null)
+            {
+                string msg = filename +
+                    "\n\nThe document package within the specified " +
+                    "file does not contain a FixedDocumentSequence.";
+                MessageBox.Show(msg, "Package Error");
+                return false;
+            }
+
+
+            docViewer.Document = fds;
+
+
+            menuFileClose.IsEnabled = true;
+            menuFilePrint.IsEnabled = true;
+            menuViewAnnotations.IsEnabled = true;
+            menuViewIncreaseZoom.IsEnabled = true;
+            menuViewDecreaseZoom.IsEnabled = true;
+
+
+            Uri fixedDocumentSeqUri = GetFixedDocumentSequenceUri();
+            _annotHelper.SetSource(_packageUri, fixedDocumentSeqUri);
+            if (menuViewAnnotations.IsChecked)
+                _annotHelper.StartAnnotations();
+
+
+            docViewer.Focus();
+
+            return true;
+        }
+
+
+
+
+
+
+
+
+
+        private Uri GetFixedDocumentSequenceUri()
+        {
+
+
+            foreach (PackagePart part in _xpsPackage.GetParts())
+            {
+                if (part.ContentType == _fixedDocumentSequenceContentType)
+                    return part.Uri;
+            }
+
+
+            return null;
+        }
+
+
+
+
+
+
+
+
+
+        private Package GetPackage(string filename)
+        {
+            Package inputPackage = null;
+
+
+            WebRequest webRequest = System.Net.WebRequest.Create(filename);
+            if (webRequest != null)
+            {
+                WebResponse webResponse = webRequest.GetResponse();
+                if (webResponse != null)
+                {
+                    Stream inputPackageStream = webResponse.GetResponseStream();
+                    if (inputPackageStream != null)
+                    {   
+                        inputPackage = Package.Open(inputPackageStream);
+                    }
+                }
+            }
+
+            return inputPackage;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        private FixedDocument GetFixedDocument(Uri fixedDocUri)
+        {
+            FixedDocument fixedDocument = null;
+
+
+
+            Uri tempUri = new Uri(_xpsDocumentPath, UriKind.RelativeOrAbsolute);
+            ParserContext parserContext = new ParserContext();
+            parserContext.BaseUri = PackUriHelper.Create(tempUri);
+
+
+            PackagePart fixedDocPart = _xpsPackage.GetPart(fixedDocUri);
+            if (fixedDocPart != null)
+            {
+                object fixedObject =
+                    XamlReader.Load(fixedDocPart.GetStream(), parserContext);
+                if (fixedObject != null)
+                    fixedDocument = fixedObject as FixedDocument;
+            }
+
+            return fixedDocument;
+        }
+
+
+
+
+
+
+        private void OnExit(object sender, EventArgs e)
+        {
+            Close();        
+        }
+
+
+
+
+
+        private void OnClosed(object sender, EventArgs e)
+        {
+            CloseDocument();
+        }
+
+
+
+
+
+
+        private void OnClose(object target, ExecutedRoutedEventArgs args)
+        {
+            CloseDocument();
+        }
+
+
+
+
+
+
+        public void CloseDocument()
+        {
+
+            _annotHelper.StopAnnotations();
+
+
+            docViewer.Document = null;
+
+
+            if (_xpsPackage != null)
+            {
+                _xpsPackage.Close();
+                _xpsPackage = null;
+            }
+
+            if (_packageUri != null)
+                PackageStore.RemovePackage(_packageUri);
+
+
+            menuFileClose.IsEnabled = false;
+            menuFilePrint.IsEnabled = false;
+            menuViewAnnotations.IsEnabled = false;
+            menuViewIncreaseZoom.IsEnabled = false;
+            menuViewDecreaseZoom.IsEnabled = false;
+        }
+
+
+
+
+
+        private void OnPrint(object target, ExecutedRoutedEventArgs args)
+        {
+            PrintDocument();
+        }
+
+
+
+
+
+        public void PrintDocument()
+        {
+            if (docViewer == null)
+                return; 
+
+
+            if ((menuViewAnnotations.IsChecked==false) || (_annotHelper == null))
+                docViewer.Print();
+
+
+            else 
+            {
+                PrintDialog prntDialog = new PrintDialog();
+                if ((bool)prntDialog.ShowDialog())
+                {
+
+
+
+
+                    string docDir = Directory.GetCurrentDirectory();
+
+
+                    XpsDocumentWriter xdw = PrintQueue.CreateXpsDocumentWriter(
+                                                        prntDialog.PrintQueue);
+
+
+                    try
+                    {
+                        xdw.Write(_annotHelper.GetAnnotationDocumentPaginator(
+                            _xpsDocument.GetFixedDocumentSequence()));
+                    }
+                    catch (PrintingCanceledException)
+                    {
+
+
+
+
+
+
+
+
+                    }
+
+
+                    Directory.SetCurrentDirectory(docDir);
+                }
+            }
+        }
+
+
+
+
+
+        private void ShowAnnotations(object sender, EventArgs e)
+        {
+            if (_annotHelper != null)
+                _annotHelper.StartAnnotations();
+        }
+
+
+
+
+
+        private void HideAnnotations(object sender, EventArgs e)
+        {
+            if (_annotHelper != null)
+                _annotHelper.StopAnnotations();
+        }
+
+
+
+
+
+        public DocumentViewer DocViewer
+        {
+            get
+                { return docViewer; }
+        }
+
+
+        //private fields
+
+        private string _xpsDocumentPath; 
+        private Uri    _packageUri;      
+        private Package _xpsPackage = null; 
+        private XpsDocument _xpsDocument;   
+        private AnnotationsHelperXps _annotHelper;  
+
+        private readonly string _fixedDocumentSequenceContentType =
+            "application/vnd.ms-package.xps-fixeddocumentsequence+xml";
+
+        //
+
+    }
+
+}
+
+ 
